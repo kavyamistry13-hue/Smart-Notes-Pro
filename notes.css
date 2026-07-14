@@ -176,6 +176,10 @@ select{
 
 }
 
+#darkMode:active{
+    transform: rotate(20deg);
+}
+
 /* ===========================
    Notes Grid
 =========================== */
