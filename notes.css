@@ -171,7 +171,6 @@ select{
 
 .rotate{
 
-<<<<<<< HEAD
 .rotate{
 
     transform:rotate(15deg);
@@ -180,11 +179,9 @@ select{
 
 
 
-=======
     transform:rotate(15deg);
 
 }
->>>>>>> 800380c (Improved dark mode and search experience)
 /* ===========================
    Notes Grid
 =========================== */
