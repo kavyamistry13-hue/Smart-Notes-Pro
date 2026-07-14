@@ -24,7 +24,15 @@ const pinnedInput = document.getElementById("pinned");
 // Search
 const searchInput = document.getElementById("search");
 const categoryFilter = document.getElementById("categoryFilter");
+ 
+//Search Box
+const searchBox = document.querySelector(".searchBox");
 
+searchBox.addEventListener("click", function () {
+
+    search.focus();
+
+});
 // Container
 const notesContainer = document.getElementById("notesContainer");
 
@@ -862,7 +870,6 @@ setTimeout(function(){
     }
 
 };
-
 // ===============================
 // Initial Load
 // ===============================

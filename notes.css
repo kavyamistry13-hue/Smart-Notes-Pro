@@ -169,7 +169,9 @@ select{
 }
 
 
+.rotate{
 
+<<<<<<< HEAD
 .rotate{
 
     transform:rotate(15deg);
@@ -178,6 +180,11 @@ select{
 
 
 
+=======
+    transform:rotate(15deg);
+
+}
+>>>>>>> 800380c (Improved dark mode and search experience)
 /* ===========================
    Notes Grid
 =========================== */
@@ -1214,5 +1221,39 @@ background:#fbbf24;
 .dark #pageTitle{
 
     color:white;
+
+}
+.dark .searchBox{
+
+    background:#374151;
+
+}
+
+.dark .searchBox i{
+
+    color:white;
+
+}
+
+.dark .searchBox input{
+
+    color:white;
+
+}
+
+.dark .searchBox input::placeholder{
+
+    color:#d1d5db;
+
+}
+.dark #darkMode{
+
+    background:#1f2937;
+
+    color:white;
+
+    border:1px solid #4b5563;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.4);
 
 }
