@@ -170,15 +170,13 @@ select{
 
 
 
-#darkMode:hover{
+.rotate{
 
-    transform:rotate(20deg);
+    transform:rotate(15deg);
 
 }
 
-#darkMode:active{
-    transform: rotate(20deg);
-}
+
 
 /* ===========================
    Notes Grid
