@@ -837,6 +837,14 @@ function loadTheme(){
 
 darkBtn.onclick = function(){
 
+    darkBtn.classList.add("rotate");
+
+setTimeout(function(){
+
+    darkBtn.classList.remove("rotate");
+
+},300);
+
     document.body.classList.toggle("dark");
 
     if(document.body.classList.contains("dark")){
