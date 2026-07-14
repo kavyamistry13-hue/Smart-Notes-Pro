@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Notes Pro</title>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+          href="notes.css">
+
+    <!-- Google Font -->
+
+    <link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- =========================
+        SIDEBAR
+========================== -->
+
+<div class="sidebar">
+
+    <div class="logo">
+
+        <i class="fa-solid fa-note-sticky"></i>
+
+        <h2>Smart Notes</h2>
+
+    </div>
+
+    <button
+        id="addBtn">
+
+        <i class="fa-solid fa-plus"></i>
+
+        <span>New Note</span>
+
+    </button>
+
+    <button
+        id="allBtn"
+        class="active">
+
+        <i class="fa-solid fa-book"></i>
+
+        <span>All Notes</span>
+
+        <span
+        class="count"
+        id="allCount">
+
+        0
+
+        </span>
+
+    </button>
+
+    <button
+        id="favBtn">
+
+        <i class="fa-solid fa-star"></i>
+
+        <span>Favorites</span>
+
+        <span
+        class="count"
+        id="favCount">
+
+        0
+
+        </span>
+
+    </button>
+
+    <button
+        id="archiveBtn">
+
+        <i class="fa-solid fa-box-archive"></i>
+
+        <span>Archive</span>
+
+        <span
+        class="count"
+        id="archiveCount">
+
+        0
+
+        </span>
+
+    </button>
+
+    <button
+        id="trashBtn">
+
+        <i class="fa-solid fa-trash"></i>
+
+        <span>Trash</span>
+
+        <span
+        class="count"
+        id="trashCount">
+
+        0
+
+        </span>
+
+    </button>
+
+    <div class="sidebarFooter">
+
+        <p>
+
+            Smart Notes Pro
+
+        </p>
+
+        <small>
+
+            Version 4.0
+
+        </small>
+
+    </div>
+
+</div>
+
+<!-- =========================
+        MAIN STARTS HERE
+========================== -->
+
+<div class="main">
+    <!-- =========================
+        TOP BAR
+========================== -->
+
+<div class="topBar">
+
+    <div class="searchBox">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <input
+            type="text"
+            id="search"
+            placeholder="Search your notes...">
+
+    </div>
+
+    <select id="categoryFilter">
+
+        <option value="All">
+            All Categories
+        </option>
+
+        <option value="Study">
+            📚 Study
+        </option>
+
+        <option value="Personal">
+            👤 Personal
+        </option>
+
+        <option value="Ideas">
+            💡 Ideas
+        </option>
+
+        <option value="Work">
+            💼 Work
+        </option>
+
+    </select>
+
+    <button id="darkMode">
+
+        🌙
+
+    </button>
+
+</div>
+
+<!-- =========================
+      DASHBOARD
+========================== -->
+
+<div class="dashboard">
+
+    <div class="card">
+
+        <i class="fa-solid fa-book"></i>
+
+        <h2 id="dashboardTotal">
+
+            0
+
+        </h2>
+
+        <p>
+
+            Total Notes
+
+        </p>
+
+    </div>
+
+    <div class="card">
+
+        <i class="fa-solid fa-star"></i>
+
+        <h2 id="dashboardFav">
+
+            0
+
+        </h2>
+
+        <p>
+
+            Favorites
+
+        </p>
+
+    </div>
+
+    <div class="card">
+
+        <i class="fa-solid fa-box-archive"></i>
+
+        <h2 id="dashboardArchive">
+
+            0
+
+        </h2>
+
+        <p>
+
+            Archived
+
+        </p>
+
+    </div>
+
+    <div class="card">
+
+        <i class="fa-solid fa-trash"></i>
+
+        <h2 id="dashboardTrash">
+
+            0
+
+        </h2>
+
+        <p>
+
+            Trash
+
+        </p>
+
+    </div>
+
+</div>
+
+<!-- =========================
+      PAGE HEADER
+========================== -->
+
+<div class="pageHeader">
+
+    <h1 id="pageTitle">
+
+        All Notes
+
+    </h1>
+
+    <button
+        id="quickAdd">
+
+        <i class="fa-solid fa-plus"></i>
+
+        Add Note
+
+    </button>
+
+</div>
+
+<!-- =========================
+      NOTES GRID
+========================== -->
+
+<div
+id="notesContainer">
+
+</div>
+<!-- =========================
+        NOTE POPUP
+========================== -->
+
+<div class="popup hidden" id="notePopup">
+
+    <div class="popupContent">
+
+        <h2 id="popupTitle">
+
+            Create New Note
+
+        </h2>
+
+        <!-- Note Title -->
+
+        <input
+        type="text"
+        id="title"
+        placeholder="Enter note title...">
+
+        <!-- Category -->
+
+        <select id="noteCategory">
+
+            <option value="Study">📚 Study</option>
+
+            <option value="Personal">👤 Personal</option>
+
+            <option value="Ideas">💡 Ideas</option>
+
+            <option value="Work">💼 Work</option>
+
+        </select>
+
+        <!-- Note Color -->
+
+        <label>
+
+            Note Color
+
+        </label>
+
+        <input
+        type="color"
+        id="noteColor"
+        value="#4f46e5">
+
+        <!-- Reminder -->
+
+        <label>
+
+            Reminder
+
+        </label>
+
+        <input
+        type="datetime-local"
+        id="reminder">
+
+        <!-- Note Text -->
+
+        <textarea
+        id="noteText"
+        placeholder="Write your note here..."></textarea>
+
+        <!-- Options -->
+
+        <div class="options">
+
+            <label>
+
+                <input
+                type="checkbox"
+                id="favorite">
+
+                ⭐ Favorite
+
+            </label>
+
+            <label>
+
+                <input
+                type="checkbox"
+                id="pinned">
+
+                📌 Pin
+
+            </label>
+
+        </div>
+
+        <!-- Buttons -->
+
+        <div class="popupButtons">
+
+            <button id="closePopup">
+
+                Cancel
+
+            </button>
+
+            <button id="saveNote">
+
+                Save Note
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+<!-- =========================
+        JAVASCRIPT
+========================== -->
+
+<script src="script.js"></script>
+
+</div>
+
+</body>
+
+</html>

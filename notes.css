@@ -1,0 +1,1216 @@
+/* ===========================
+   Google Font & Reset
+=========================== */
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+    background:#eef2ff;
+    display:flex;
+    min-height:100vh;
+    overflow-x:hidden;
+    transition:0.35s;
+
+    color:#111827;
+}
+
+button{
+    font-family:inherit;
+}
+
+input,
+textarea,
+select{
+    font-family:inherit;
+}
+
+/* ===========================
+   Sidebar
+=========================== */
+
+.sidebar{
+    width:260px;
+    background:#4f46e5;
+    color:white;
+    padding:25px;
+    display:flex;
+    flex-direction:column;
+}
+
+.sidebar h2{
+    margin-bottom:30px;
+    text-align:center;
+}
+
+.sidebar button{
+    width:100%;
+    padding:14px;
+    margin-bottom:12px;
+
+    border:none;
+    border-radius:12px;
+
+    background:white;
+    color:#4f46e5;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    transition:.3s;
+}
+
+.sidebar button:hover{
+
+    background:#c7d2fe;
+
+    transform:translateX(6px);
+
+}
+
+/* ===========================
+   Main Area
+=========================== */
+
+.main{
+
+    flex:1;
+
+    padding:30px;
+
+}
+
+/* ===========================
+   Top Bar
+=========================== */
+
+.topBar{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-bottom:30px;
+
+    flex-wrap:wrap;
+
+}
+
+.topBar input{
+
+    flex:1;
+
+    min-width:250px;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:12px;
+
+    outline:none;
+
+    font-size:16px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
+
+.topBar select{
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:12px;
+
+    font-size:15px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
+
+#darkMode{
+
+    width:55px;
+
+    border:none;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    background:white;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+    transition:
+
+    transform .4s,
+
+    background .3s,
+
+    color .3s;
+
+}
+
+
+
+#darkMode:hover{
+
+    transform:rotate(20deg);
+
+}
+
+/* ===========================
+   Notes Grid
+=========================== */
+
+#notesContainer{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fill,minmax(300px,1fr));
+
+    gap:25px;
+
+}
+/* ===========================
+   Note Card
+=========================== */
+
+.note{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:20px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:
+
+   background .35s,
+
+   color .35s,
+
+    transform .35s,
+
+   box-shadow .35s;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.note:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 18px 35px rgba(0,0,0,.15);
+
+}
+
+/* Top Section */
+
+.noteHeader{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:15px;
+
+}
+
+.noteHeader h3{
+
+    font-size:22px;
+
+    color:#4f46e5;
+
+}
+
+/* Category Badge */
+
+.category{
+
+    display:inline-block;
+
+    margin-top:10px;
+
+    padding:6px 12px;
+
+    border-radius:30px;
+
+    background:#e0e7ff;
+
+    color:#4338ca;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+/* Note Text */
+
+.note p{
+
+    margin-top:15px;
+
+    line-height:1.7;
+
+    color:#555;
+
+}
+
+/* Date */
+
+.note small{
+
+    display:block;
+
+    margin-top:18px;
+
+    color:gray;
+
+}
+
+/* Buttons */
+
+.noteButtons{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-top:20px;
+
+}
+
+/* Common Button */
+
+.noteButtons button{
+
+    border:none;
+
+    cursor:pointer;
+
+    border-radius:10px;
+
+    padding:10px 15px;
+
+    font-size:14px;
+
+    transition:.3s;
+
+}
+
+/* Edit Button */
+
+.editBtn{
+
+    background:#22c55e;
+
+    color:white;
+
+}
+
+.editBtn:hover{
+
+    background:#16a34a;
+
+}
+
+/* Delete Button */
+
+.deleteBtn{
+
+    background:#ef4444;
+
+    color:white;
+
+}
+
+.deleteBtn:hover{
+
+    background:#dc2626;
+
+}
+
+/* Favorite Button */
+
+
+
+.favoriteBtn:hover{
+
+    transform:scale(1.1);
+
+}
+
+/* Pin Button */
+
+
+
+.pinBtn:hover{
+
+    transform:scale(1.1);
+
+}
+
+/* Empty Notes Message */
+
+.empty{
+
+    width:100%;
+
+    text-align:center;
+
+    color:gray;
+
+    font-size:22px;
+
+    margin-top:80px;
+
+}
+/* ===========================
+   Popup Background
+=========================== */
+
+
+
+.popupContent select{
+
+    width:100%;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    border:1px solid #ddd;
+
+}
+
+/* Buttons */
+
+.popupButtons{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:10px;
+
+    margin-top:20px;
+
+}
+
+.popupButtons button{
+
+    padding:12px 22px;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+#saveNote{
+
+    background:#4f46e5;
+
+    color:white;
+
+}
+
+#saveNote:hover{
+
+    background:#4338ca;
+
+}
+
+#closePopup{
+
+    background:#ef4444;
+
+    color:white;
+
+}
+
+#closePopup:hover{
+
+    background:#dc2626;
+
+}
+
+/* ===========================
+   Mobile
+=========================== */
+
+@media(max-width:768px){
+
+    body{
+
+        flex-direction:column;
+
+    }
+
+    .sidebar{
+
+        transition:0.35s;
+
+        width:100%;
+
+    }
+
+    .topBar{
+
+        flex-direction:column;
+
+    }
+
+    .topBar input{
+
+        min-width:100%;
+
+    }
+
+    #notesContainer{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+/* ===========================
+   Dark Mode (Preparation)
+=========================== */
+
+.dark{
+
+    background:#111827;
+
+    color:white;
+
+}
+
+.dark .main{
+
+    background:#111827;
+
+}
+
+.dark .note{
+
+    background:#1f2937;
+
+    color:white;
+
+}
+
+.dark .popupContent{
+
+    background:#1f2937;
+
+    color:white;
+
+}
+.pinBtn{
+
+background:#2563eb;
+
+color:white;
+
+}
+
+.pinBtn:hover{
+
+background:#1d4ed8;
+
+}
+
+.favoriteBtn{
+
+background:#facc15;
+
+color:#111827;
+
+}
+
+.favoriteBtn:hover{
+
+background:#fbbf24;
+
+}
+/* ==========================================
+   Sidebar Counters & Page Title
+========================================== */
+
+/* Counter Badge */
+
+.count{
+
+    margin-left:auto;
+
+    background:#ffffff;
+
+    color:#4f46e5;
+
+    font-weight:700;
+
+    min-width:28px;
+
+    height:28px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    font-size:13px;
+
+}
+
+/* Sidebar Buttons */
+
+.sidebar button{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+.sidebar button i{
+
+    width:20px;
+
+}
+
+/* Active Sidebar Button */
+
+.sidebar button.active{
+
+    background:#312e81;
+
+    color:white;
+
+}
+
+.sidebar button.active .count{
+
+    background:white;
+
+    color:#312e81;
+
+}
+
+/* Page Title */
+
+#pageTitle{
+
+    font-size:30px;
+
+    color:#4f46e5;
+
+    margin-bottom:25px;
+
+    font-weight:700;
+
+    margin:0;
+
+}
+
+/* Note Status Label */
+
+.status{
+
+    display:inline-block;
+
+    margin-top:10px;
+
+    padding:5px 12px;
+
+    border-radius:20px;
+
+    font-size:12px;
+
+    font-weight:600;
+
+}
+
+.status.archive{
+
+    background:#dbeafe;
+
+    color:#1d4ed8;
+
+}
+
+.status.trash{
+
+    background:#fee2e2;
+
+    color:#dc2626;
+
+}
+
+/* Restore Button */
+
+.restoreBtn{
+
+    background:#16a34a;
+
+    color:white;
+
+}
+
+.restoreBtn:hover{
+
+    background:#15803d;
+
+}
+
+/* Permanent Delete */
+
+.deleteForeverBtn{
+
+    background:#b91c1c;
+
+    color:white;
+
+}
+
+.deleteForeverBtn:hover{
+
+    background:#991b1b;
+
+}
+
+/* Archive Button */
+
+.archiveBtn{
+
+    background:#2563eb;
+
+    color:white;
+
+}
+
+.archiveBtn:hover{
+
+    background:#1d4ed8;
+
+}
+/* ======================================
+   NOTE POPUP
+====================================== */
+
+.popup{
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,.45);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow-y: auto;   /* Allows scrolling if popup is tall */
+    padding: 20px;
+
+    z-index: 999;
+}
+
+.hidden{
+
+    display:none;
+
+}
+
+/* Popup Box */
+
+.popupContent{
+    width: 550px;
+    max-width: 95%;
+
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+
+    box-shadow: 0 20px 40px rgba(0,0,0,.2);
+
+    max-height: 90vh;   /* Popup won't exceed screen height */
+    overflow-y: auto;   /* Scroll inside popup */
+
+    animation: popupAnimation .3s ease;
+}
+
+/* Animation */
+
+@keyframes popupAnimation{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.8);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+/* Heading */
+
+.popupContent h2{
+
+    color:#4f46e5;
+
+    margin-bottom:20px;
+
+}
+
+/* Inputs */
+
+.popupContent input[type="text"],
+
+.popupContent textarea,
+
+.popupContent select,
+
+.popupContent input[type="datetime-local"]{
+
+    width:100%;
+
+    margin-top:10px;
+
+    margin-bottom:18px;
+
+    padding:14px;
+
+    border:1px solid #ddd;
+
+    border-radius:12px;
+
+    outline:none;
+
+    font-size:15px;
+
+}
+
+/* Textarea */
+
+.popupContent textarea{
+
+    height:140px;
+
+    resize:none;
+
+}
+
+/* Labels */
+
+.popupContent label{
+
+    display:block;
+
+    margin-top:10px;
+
+    font-weight:600;
+
+    color:#444;
+
+}
+
+/* Color Picker */
+
+#noteColor{
+
+    width:70px;
+
+    height:45px;
+
+    border:none;
+
+    cursor:pointer;
+
+    margin:12px 0 20px;
+
+}
+
+/* Favorite + Pin */
+
+.options{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-top:10px;
+
+    margin-bottom:25px;
+
+}
+
+.options label{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    cursor:pointer;
+
+}
+
+/* Buttons */
+
+.popupButtons{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:15px;
+
+}
+
+.popupButtons button{
+
+    padding:12px 25px;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+/* Cancel */
+
+#closePopup{
+
+    background:#ef4444;
+
+    color:white;
+
+}
+
+#closePopup:hover{
+
+    background:#dc2626;
+
+}
+
+/* Save */
+
+#saveNote{
+
+    background:#4f46e5;
+
+    color:white;
+
+}
+
+#saveNote:hover{
+
+    background:#4338ca;
+
+}
+/* ===========================
+   NEW DASHBOARD
+=========================== */
+
+.searchBox{
+
+    flex:1;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    background:white;
+
+    padding:0 20px;
+
+    border-radius:12px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
+
+.searchBox input{
+
+    flex:1;
+
+    border:none;
+
+    outline:none;
+
+    background:transparent;
+
+    font-size:16px;
+
+}
+
+
+.card{
+
+    background:white;
+
+    border-radius:16px;
+
+    padding:20px;
+
+    text-align:center;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.card i{
+
+    font-size:28px;
+
+    color:#4f46e5;
+
+    margin-bottom:12px;
+
+}
+
+.card h2{
+
+    font-size:30px;
+
+    color:#111827;
+
+}
+
+.card p{
+
+    margin-top:10px;
+
+    color:#666;
+
+}
+
+.pageHeader{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:35px 0 25px;
+}
+
+
+
+#quickAdd{
+
+    padding:12px 22px;
+
+    border:none;
+
+    background:#4f46e5;
+
+    color:white;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+}
+
+#quickAdd:hover{
+
+    background:#4338ca;
+
+}
+
+.logo{
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+}
+
+.logo i{
+
+    font-size:45px;
+
+    margin-bottom:10px;
+
+}
+
+.sidebarFooter{
+
+    margin-top:auto;
+
+    text-align:center;
+
+    opacity:.85;
+
+}
+.dashboard{
+    display:grid;
+    grid-template-columns:repeat(4,minmax(180px,1fr));
+    gap:20px;
+    margin:30px 0;
+}
+
+@media(max-width:1100px){
+    .dashboard{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:650px){
+    .dashboard{
+        grid-template-columns:1fr;
+    }
+}
+
+/* ======================================
+   DARK MODE
+====================================== */
+
+.dark{
+
+    background:#111827;
+
+    color:white;
+
+}
+
+.dark .main{
+
+    background:#111827;
+
+}
+
+.dark .sidebar{
+
+    background:#1e1b4b;
+
+}
+
+.dark .note{
+
+    background:#1f2937;
+
+    color:white;
+
+}
+
+.dark .note p{
+
+    color:#d1d5db;
+
+}
+
+.dark .popupContent{
+
+    background:#1f2937;
+
+    color:white;
+
+}
+
+.dark input,
+
+.dark textarea,
+
+.dark select{
+
+    background:#374151;
+
+    color:white;
+
+    border:1px solid #555;
+
+}
+
+.dark .topBar input,
+
+.dark .topBar select{
+
+    background:#374151;
+
+    color:white;
+
+}
+
+.dark .card{
+
+    background:#1f2937;
+
+    color:white;
+
+}
+
+.dark #pageTitle{
+
+    color:white;
+
+}
