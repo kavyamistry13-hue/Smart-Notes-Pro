@@ -893,3 +893,30 @@ document.getElementById("favBtn").onclick = showFavorites;
 document.getElementById("archiveBtn").onclick = showArchive;
 
 document.getElementById("trashBtn").onclick = showTrash;
+
+// ===============================
+// Register Service Worker
+// ===============================
+
+if ("serviceWorker" in navigator) {
+
+    window.addEventListener("load", () => {
+
+        navigator.serviceWorker
+            .register("./service-worker.js")
+
+            .then(() => {
+
+                console.log("✅ Service Worker Registered");
+
+            })
+
+            .catch(error => {
+
+                console.log("❌ Service Worker Failed", error);
+
+            });
+
+    });
+
+}
